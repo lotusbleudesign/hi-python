@@ -1,19 +1,24 @@
 from random import *
 
-number = randint(1,100)
+MIN = int(input("Number between (minimum) : "))
+MAX = int (input("Maximum ? : "))
+number = randint(MIN,MAX)
 guess_counter = -1
 
 # Need cheat ?
-# print(number)
+#print(number)
 
 while (guess_counter != number) :
-    
-    guess_counter = int(input("Please, find a number between 0 and 100: "))
 
-    if(guess_counter >  number ):
-        print("Smaller")
-    else:
-        print("Bigger")
+        guess_counter = int(input(f"Please, find a number between {MIN} and {MAX}: "))
+
+        if(guess_counter==number ):
+            print(" Won ! the number was %s " % number)
+            break
+        elif(guess_counter >  number ):
+            print("Smaller")
+        else:
+            print("Bigger")
+
         
-    if(guess_counter==number ):
-        print(" Won ! the number was %s " % number)
+
